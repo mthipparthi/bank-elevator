@@ -1,17 +1,12 @@
-import logging
-
 import click
 
 from bankelevator import Elevator, ElevatorInsideController, ElevatorOutsideController
-
-logger = logging.getLogger(__name__)
 
 
 @click.command()
 @click.option("--floors", type=int, required=True)
 @click.option("--current_floor", type=int, required=True)
 def main(floors, current_floor):
-
     elevator = Elevator(floors)
     elevator.current_floor = current_floor
 
@@ -23,8 +18,8 @@ def main(floors, current_floor):
         current_floor, [(1, 9), (2, 8), (5, 5), (4, 6), (9, 3), (9, 2), (9, 0)]
     )
 
-    logger.info(f"Inside Algo Output: {result1}")
-    logger.info(f"Outside Algo Output: {result2}")
+    print(f"Inside Algo Output: {result1}")
+    print(f"Outside Algo Output: {result2}")
 
     assert result1 == result2
 
