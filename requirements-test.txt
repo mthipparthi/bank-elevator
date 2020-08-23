@@ -1,0 +1,5 @@
+-r requirements.txt
+tox==3.14.6
+pip-tools==4.5.1
+isort
+black
